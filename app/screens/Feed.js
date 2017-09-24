@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import Wish from '../components/Wish';
+import WishList from '../components/WishList';
 
 function Feed() {
 	return (
 		<ScrollView>
 			<View>
-				<Wish />
+				<WishList />
 			</View>
 		</ScrollView>
 	);

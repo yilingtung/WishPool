@@ -15,6 +15,9 @@ const styles = {
 export const FeedStack = StackNavigator({
 	Feed: {
 		screen: Feed,
+		navigationOptions: {
+			title: 'Feed',
+		},
 	},
 });
 
