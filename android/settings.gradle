@@ -1,0 +1,3 @@
+rootProject.name = 'WishPool'
+
+include ':app'
