@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Tabs } from './config/routes';
 
-class App extends Component {
-  render() {
-    return <Tabs />;
-  }
+function App() {
+	return <Tabs />;
 }
 
 export default App;

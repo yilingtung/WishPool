@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  ScrollView,
-} from 'react-native';
+import React from 'react';
+import { View, ScrollView } from 'react-native';
 import Wish from '../components/Wish';
 
-class Feed extends Component {
-  render() {
-    return (
-      <ScrollView>
-        <View>
-          <Wish />
-        </View>
-      </ScrollView>
-    );
-  }
+function Feed() {
+	return (
+		<ScrollView>
+			<View>
+				<Wish />
+			</View>
+		</ScrollView>
+	);
 }
 
 export default Feed;
