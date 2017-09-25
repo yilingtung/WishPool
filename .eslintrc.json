@@ -23,7 +23,7 @@
 	"rules": {
 		"arrow-parens": ["error", "as-needed"],
 		"no-multi-spaces": ["error", { "exceptions": { "ImportDeclaration": true } }],
-		"indent": [2, "tab"],
+		"indent": [2, "tab", { "SwitchCase": 1 }],
 		"no-tabs": 0,
 		"no-console": 0,
 		"no-underscore-dangle": 0,
