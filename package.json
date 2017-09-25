@@ -6,13 +6,17 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"lint": "eslint \"**/*.js\"",
     "format": "prettier --use-tabs --single-quote --trailing-comma all --print-width 100 --write \"./{,!(node_modules|_public|__tests__)/**/}/*.js\" && eslint --fix .",
-    "run-ios": "react-native run-ios",
+    "ios": "NODE_ENV=dev react-native run-ios",
 		"test": "jest"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.48.3",
-		"react-navigation": "^1.0.0-beta.11"
+		"react-navigation": "^1.0.0-beta.11",
+		"react-redux": "^5.0.6",
+		"redux": "^3.7.2",
+		"redux-persist": "^4.10.0",
+		"redux-thunk": "^2.2.0"
 	},
 	"devDependencies": {
 		"babel-eslint": "^8.0.0",
@@ -26,7 +30,8 @@
 		"jest": "21.1.0",
 		"prettier": "^1.7.0",
 		"prettier-eslint": "^8.1.1",
-		"react-test-renderer": "16.0.0-alpha.12"
+		"react-test-renderer": "16.0.0-alpha.12",
+		"redux-logger": "^3.0.6"
 	},
 	"jest": {
 		"preset": "react-native"

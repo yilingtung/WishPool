@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import Feed from '../screens/Feed';
+import WishDetail from '../screens/WishDetail';
 import Me from '../screens/Me';
 import UserDetail from '../screens/UserDetail';
 
@@ -18,6 +19,12 @@ export const FeedStack = StackNavigator({
 		navigationOptions: {
 			title: 'Feed',
 		},
+	},
+	WishDetail: {
+		screen: WishDetail,
+		navigationOptions: ({ navigation }) => ({
+			title: navigation.state.params.text,
+		}),
 	},
 });
 
