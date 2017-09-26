@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import { TabNavigator } from 'react-navigation';
-import FeedNavigation from './FeedNavigation';
-import MeNavigation from './MeNavigation';
+import FeedStack from './FeedStack/StackNavigation';
+import MeStack from './MeStack/StackNavigation';
 
 const styles = {
 	icon: {
@@ -13,14 +13,14 @@ const styles = {
 
 export const Tabs = TabNavigator({
 	Feed: {
-		screen: FeedNavigation,
+		screen: FeedStack,
 		navigationOptions: {
 			tabBarLabel: 'Feed',
 			tabBarIcon: ({ tintColor }) => <View style={[styles.icon, { backgroundColor: tintColor }]} />,
 		},
 	},
 	Me: {
-		screen: MeNavigation,
+		screen: MeStack,
 		navigationOptions: {
 			tabBarLabel: 'Me',
 			tabBarIcon: ({ tintColor }) => <View style={[styles.icon, { backgroundColor: tintColor }]} />,

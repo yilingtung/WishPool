@@ -2,7 +2,7 @@ import { StackNavigator } from 'react-navigation';
 import Me from '../../../screens/Me';
 import UserDetail from '../../../screens/UserDetail';
 
-const MeStack = StackNavigator({
+const routeConfiguration = {
 	Me: {
 		screen: Me,
 		navigationOptions: {
@@ -15,6 +15,6 @@ const MeStack = StackNavigator({
 			title: `${navigation.state.params.name}'s Profile'`,
 		}),
 	},
-});
+};
 
-export default MeStack;
+export default StackNavigator(routeConfiguration);

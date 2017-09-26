@@ -1,10 +1,10 @@
 import React from 'react';
 import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
-import MeStack from './MeStack';
+import Stack from './navigationConfiguration';
 
-const MeNavigation = ({ dispatch, nav }) => (
-	<MeStack
+const StackNavigation = ({ dispatch, nav }) => (
+	<Stack
 		navigation={addNavigationHelpers({
 			dispatch,
 			state: nav,
@@ -16,4 +16,4 @@ const mapStateToProps = state => ({
 	nav: state.meNav,
 });
 
-export default connect(mapStateToProps)(MeNavigation);
+export default connect(mapStateToProps)(StackNavigation);

@@ -1,4 +1,4 @@
-import FeedStack from '../../config/routes/FeedNavigation/FeedStack';
+import FeedStack from '../../config/routes/FeedStack/navigationConfiguration';
 
 export default (state = null, action) => {
 	const nextState = FeedStack.router.getStateForAction(action, state);

@@ -2,7 +2,7 @@ import { StackNavigator } from 'react-navigation';
 import Feed from '../../../screens/Feed';
 import WishDetail from '../../../screens/WishDetail';
 
-const FeedStack = StackNavigator({
+const routeConfiguration = {
 	Feed: {
 		screen: Feed,
 		navigationOptions: {
@@ -15,6 +15,6 @@ const FeedStack = StackNavigator({
 			title: navigation.state.params.text,
 		}),
 	},
-});
+};
 
-export default FeedStack;
+export default StackNavigator(routeConfiguration);

@@ -1,10 +1,10 @@
 import React from 'react';
 import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
-import FeedStack from './FeedStack';
+import Stack from './navigationConfiguration';
 
-const FeedNavigation = ({ dispatch, nav }) => (
-	<FeedStack
+const StackNavigation = ({ dispatch, nav }) => (
+	<Stack
 		navigation={addNavigationHelpers({
 			dispatch,
 			state: nav,
@@ -16,4 +16,4 @@ const mapStateToProps = state => ({
 	nav: state.feedNav,
 });
 
-export default connect(mapStateToProps)(FeedNavigation);
+export default connect(mapStateToProps)(StackNavigation);
