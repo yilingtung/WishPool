@@ -9,14 +9,14 @@ class WishList extends Component {
 	}
 
 	render() {
-		const { wishes, navigate } = this.props;
+		const { wishes, goToScreen } = this.props;
 		return (
 			<View style={style.wishList}>
 				{wishes.map(wish => (
 					<TouchableOpacity
 						key={wish.id}
 						style={style.wish}
-						onPress={() => navigate('WishDetail', { text: wish.text })}
+						onPress={() => goToScreen('WishDetail', { text: wish.text })}
 					>
 						<View style={style.row}>
 							<View style={style.flex1}>

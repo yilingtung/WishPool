@@ -1,18 +1,22 @@
 import React from 'react';
-import { Text, View, ScrollView, Button } from 'react-native';
+import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
+import { View, ScrollView, Button } from 'react-native';
 
-function Me() {
-	return (
-		<ScrollView>
-			<View>
-				<Text>lll</Text>
-				<Button
-					onPress={() => this.props.navigation.navigate('UserDetail', { name: 'Lucy' })}
-					title="Lucy"
-				/>
-			</View>
-		</ScrollView>
-	);
-}
+const Me = ({ goToScreen }) => (
+	<ScrollView>
+		<View>
+			<Button
+				onPress={() => goToScreen('UserDetail', { name: 'Lucy' })}
+				title="Lucy"
+			/>
+		</View>
+	</ScrollView>
+);
 
-export default Me;
+const mapDispatchToProps = dispatch => ({
+	goToScreen: (routeName, params) =>
+		dispatch(NavigationActions.navigate({ routeName, params })),
+});
+
+export default connect(null, mapDispatchToProps)(Me);

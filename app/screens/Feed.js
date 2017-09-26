@@ -7,14 +7,11 @@ class Feed extends Component {
 		super(props);
 		this.state = {};
 	}
-	navigate = (page, data) => {
-		this.props.navigation.navigate(page, data);
-	}
 	render() {
 		return (
 			<ScrollView>
 				<View>
-					<WishList navigate={this.navigate} />
+					<WishList />
 				</View>
 			</ScrollView>
 		);
