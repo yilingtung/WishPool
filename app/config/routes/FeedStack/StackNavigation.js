@@ -16,4 +16,8 @@ const mapStateToProps = state => ({
 	nav: state.feedNav,
 });
 
-export default connect(mapStateToProps)(StackNavigation);
+const mapDispatchToProps = dispatch => ({
+	dispatch,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StackNavigation);

@@ -5,8 +5,8 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"lint": "eslint \"**/*.js\"",
-    "format": "prettier --use-tabs --single-quote --trailing-comma all --print-width 100 --write \"./{,!(node_modules|_public|__tests__)/**/}/*.js\" && eslint --fix .",
-    "ios": "NODE_ENV=dev react-native run-ios",
+		"format": "prettier --use-tabs --single-quote --trailing-comma all --print-width 100 --write \"./{,!(node_modules|_public|__tests__)/**/}/*.js\" && eslint --fix .",
+		"ios": "NODE_ENV=dev react-native run-ios",
 		"test": "jest"
 	},
 	"dependencies": {

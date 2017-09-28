@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
-import { NavigationActions } from 'react-navigation';
 import BackButton from './backButton';
 
-const mapDispatchToProps = dispatch => ({
-	goBack: () => dispatch(NavigationActions.goBack()),
+const mapStateToProps = ownProps => ({
+	navigation: ownProps.navigation,
 });
 
-export default connect(null, mapDispatchToProps)(BackButton);
+const mapDispatchToProps = dispatch => ({
+	backto: () => dispatch({ type: 'BACK_TO' }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BackButton);

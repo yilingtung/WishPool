@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
-import BackButton from '../components/BackButton';
 
 function UserDetail() {
 	return (
@@ -8,7 +7,6 @@ function UserDetail() {
 			<View>
 				<Text>UserDetail Page</Text>
 			</View>
-			<BackButton />
 		</ScrollView>
 	);
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'react-native';
 
-const BackButton = goBack => (
+const BackButton = (navigation, backto) => (
 	<Button
-		onPress={() => goBack}
+		onPress={() => backto}
 		title="BACK"
 	/>
 );

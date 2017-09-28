@@ -6,7 +6,6 @@ export default function (state = null, action) {
 	let nextState;
 	switch (action.type) {
 		case types.NAVIGATE:
-			console.log(action.params);
 			nextState = FeedStack.router.getStateForAction(
 				NavigationActions.navigate({ routeName: action.routeName, params: action.params }),
 				state,
