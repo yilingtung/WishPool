@@ -3,7 +3,7 @@ import { Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Me from '../../../screens/Me';
 import UserDetail from '../../../screens/UserDetail';
-import * as types from '../../../store/navs/actionTypes';
+import { meNavBackto } from '../../../store/navs/actions';
 
 const routeConfiguration = {
 	Me: {
@@ -17,7 +17,7 @@ const routeConfiguration = {
 		navigationOptions: ({ navigation }) => ({
 			title: `${navigation.state.params.name}'s Profile'`,
 			headerLeft:	<Button
-				onPress={() => navigation.dispatch({ type: types.ME_NAV_BACK_TO })}
+				onPress={() => navigation.dispatch(meNavBackto())}
 				title="BACK"
 			/>,
 		}),

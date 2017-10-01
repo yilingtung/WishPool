@@ -3,7 +3,7 @@ import { Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Feed from '../../../screens/Feed';
 import WishDetail from '../../../screens/WishDetail';
-import * as types from '../../../store/navs/actionTypes';
+import { backto } from '../../../store/navs/actions';
 
 const routeConfiguration = {
 	Feed: {
@@ -17,7 +17,7 @@ const routeConfiguration = {
 		navigationOptions: ({ navigation }) => ({
 			title: navigation.state.params.text,
 			headerLeft:	<Button
-				onPress={() => navigation.dispatch({ type: types.BACK_TO })}
+				onPress={() => navigation.dispatch(backto())}
 				title="BACK"
 			/>,
 		}),

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, ScrollView, Button } from 'react-native';
-import * as types from '../store/navs/actionTypes';
+import { meNavNavigate } from '../store/navs/actions';
 
 const Me = ({ goToScreen }) => (
 	<ScrollView>
@@ -15,7 +15,7 @@ const Me = ({ goToScreen }) => (
 );
 
 const mapDispatchToProps = dispatch => ({
-	goToScreen: (routeName, params) => dispatch({ type: types.ME_NAV_NAVIGATE, routeName, params }),
+	goToScreen: (routeName, params) => dispatch(meNavNavigate(routeName, params)),
 });
 
 export default connect(null, mapDispatchToProps)(Me);

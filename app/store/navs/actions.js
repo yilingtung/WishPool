@@ -1,17 +1,19 @@
 import * as types from './actionTypes';
 
-export const navigate = payload => ({
+export const navigate = (routeName, params) => ({
 	type: types.NAVIGATE,
-	payload,
+	routeName,
+	params,
 });
 
 export const backto = () => ({
 	type: types.BACK_TO,
 });
 
-export const meNavNavigate = payload => ({
+export const meNavNavigate = (routeName, params) => ({
 	type: types.ME_NAV_NAVIGATE,
-	payload,
+	routeName,
+	params,
 });
 
 export const meNavBackto = () => ({
