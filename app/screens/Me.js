@@ -3,8 +3,14 @@ import { connect } from 'react-redux';
 import { View, ScrollView, Button } from 'react-native';
 import { meNavNavigate } from '../store/navs/actions';
 
+const style = {
+	container: {
+		backgroundColor: '#FFF',
+	},
+};
+
 const Me = ({ goToScreen }) => (
-	<ScrollView>
+	<ScrollView style={style.container}>
 		<View>
 			<Button
 				onPress={() => goToScreen('UserDetail', { name: 'Lucy' })}

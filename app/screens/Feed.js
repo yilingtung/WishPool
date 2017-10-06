@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import WishList from '../components/WishList';
 
+const style = {
+	container: {
+		backgroundColor: '#FFF',
+	},
+};
+
 class Feed extends Component {
 	constructor(props) {
 		super(props);
@@ -9,7 +15,7 @@ class Feed extends Component {
 	}
 	render() {
 		return (
-			<ScrollView>
+			<ScrollView style={style.container}>
 				<View>
 					<WishList />
 				</View>

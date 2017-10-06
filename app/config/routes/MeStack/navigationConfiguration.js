@@ -4,12 +4,15 @@ import { StackNavigator } from 'react-navigation';
 import Me from '../../../screens/Me';
 import UserDetail from '../../../screens/UserDetail';
 import { meNavBackto } from '../../../store/navs/actions';
+import style from '../style';
 
-const routeConfiguration = {
+export default StackNavigator({
 	Me: {
 		screen: Me,
 		navigationOptions: {
 			title: 'Me',
+			headerStyle: style.header,
+			headerTitleStyle: style.headerTitle,
 		},
 	},
 	UserDetail: {
@@ -20,8 +23,8 @@ const routeConfiguration = {
 				onPress={() => navigation.dispatch(meNavBackto())}
 				title="BACK"
 			/>,
+			headerStyle: style.header,
+			headerTitleStyle: style.headerTitle,
 		}),
 	},
-};
-
-export default StackNavigator(routeConfiguration);
+});
