@@ -7,16 +7,24 @@ class WishList extends Component {
 		super(props);
 		this.state = {};
 	}
-
+	componentDidMount() {
+		this.props.fetchWishes();
+	}
+	renderWishes () {
+		let wishList;
+		if (this.props.wishes.list.length > 0)
+			wishList = this.props.wishes.list.map(id => this.props.wishes.group[id]);
+		return wishList == undefined ? [] : wishList;
+	}
 	render() {
-		const { wishes, goToScreen } = this.props;
+		const { goToScreen } = this.props;
 		return (
 			<View style={style.wishList}>
-				{wishes.map(wish => (
+				{this.renderWishes().map(wish => (
 					<TouchableOpacity
 						key={wish.id}
 						style={style.wish}
-						onPress={() => goToScreen('WishDetail', { text: wish.text })}
+						onPress={() => goToScreen('WishDetail', { title: wish.text, wish })}
 					>
 						<View style={style.row}>
 							<View style={style.flex1}>

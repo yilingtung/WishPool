@@ -1,15 +1,35 @@
 import * as types from './actionTypes';
-import wishes from '../../data.json';
 
-const initialState = wishes;
+const initialState = {
+	list: [],
+	group: {},
+	isFetching: false,
+    error: undefined,
+};
 
 export default function (state = initialState, action) {
 	switch (action.type) {
-		case types.ADD_WISH:
-			return {
-				...state,
-				data: [action.newWish, ...state.data],
-			};
+		case types.FETCH_WISHES_REQUEST:
+			return Object.assign({}, state, {
+				isFetching: true,
+			});
+		case types.FETCH_WISHES_FAILURE:
+			return Object.assign({}, state, {
+				isFetching: false,
+				error: action.error
+			});
+		case types.FETCH_WISHES:
+			const group = {};
+			let list = [];
+			action.wishes.forEach(el => {
+				list = [el.id, ...list];
+				group[el.id] = el;
+			});
+			return Object.assign({}, state, {
+				isFetching: false,
+				list,
+				group,
+			});
 		default:
 			return state;
 	}

@@ -1,1 +1,3 @@
-export const ADD_WISH = 'wishes.ADD_WISH';
+export const FETCH_WISHES_REQUEST = 'FETCH_WISHES_REQUEST';
+export const FETCH_WISHES_FAILURE = 'FETCH_WISHES_FAILURE';
+export const FETCH_WISHES = 'FETCH_WISHES';
