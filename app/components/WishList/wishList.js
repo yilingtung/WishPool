@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import {
+	Text,
+	View,
+	Image,
+	ListView,
+	TouchableOpacity,
+} from 'react-native';
 import style from './style';
 
 class WishList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+		this.state = {
+			dataSource: ds.cloneWithRows(this.renderWishes()),
+		};
 	}
 	componentDidMount() {
 		this.props.fetchWishes();
@@ -19,31 +28,28 @@ class WishList extends Component {
 	render() {
 		const { goToScreen } = this.props;
 		return (
-			<View style={style.wishList}>
-				{this.renderWishes().map(wish => (
+			<ListView
+				contentContainerStyle={style.wishList}
+				dataSource={this.state.dataSource}
+				enableEmptySections={true}
+				renderRow={wish =>
 					<TouchableOpacity
 						key={wish.id}
 						style={style.wish}
 						onPress={() => goToScreen('WishDetail', { title: wish.text, wish })}
 					>
+						<Image style={style.wishImg} source={{ uri: wish.img_url }} />
+						<Text style={style.wishText}>{wish.text}</Text>
 						<View style={style.row}>
-							<View style={style.flex1}>
-								<Image style={style.userImg} source={{ uri: wish.user.pic_url }} />
-								<Text>{wish.text}</Text>
-							</View>
-							<View style={style.flex1}>
-								<Image style={style.wishImg} source={{ uri: wish.img_url }} />
-							</View>
-						</View>
-						<View style={style.wishFotter}>
-							<Text style={style.possibility}>{wish.possibility}%</Text>
-							<TouchableOpacity>
-								<Text>{wish.msgs.length}</Text>
-							</TouchableOpacity>
+							<Image style={style.userImg} source={{ uri: wish.user.pic_url }} />
+							<Text style={style.possibility}>
+								{wish.possibility}
+								<Text style={style.possibility1}> %</Text>
+							</Text>
 						</View>
 					</TouchableOpacity>
-				))}
-			</View>
+				}
+			/>
 		);
 	}
 }
