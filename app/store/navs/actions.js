@@ -10,12 +10,12 @@ export const backto = () => ({
 	type: types.BACK_TO,
 });
 
-export const meNavNavigate = (routeName, params) => ({
-	type: types.ME_NAV_NAVIGATE,
+export const poolNavNavigate = (routeName, params) => ({
+	type: types.POOL_NAV_NAVIGATE,
 	routeName,
 	params,
 });
 
-export const meNavBackto = () => ({
-	type: types.ME_NAV_BACK_TO,
+export const poolNavBackto = () => ({
+	type: types.POOL_NAV_BACK_TO,
 });

@@ -1,5 +1,10 @@
 import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import {
+	Text,
+	View,
+	ScrollView,
+} from 'react-native';
+import WishList from '../components/WishList';
 
 const style = {
 	container: {
@@ -9,11 +14,9 @@ const style = {
 
 function Recent() {
 	return (
-		<ScrollView style={style.container}>
-			<View>
-				<Text>Recent Page</Text>
-			</View>
-		</ScrollView>
+		<View style={style.container}>
+			<WishList />
+		</View>
 	);
 }
 

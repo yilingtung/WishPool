@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import MeTabs from './MeTabs';
+import { PoolTabs } from '../config/routes';
 import StatusBarBackground from '../components/common/StatusBarBackground/StatusBarBackground';
 
 const style = {
@@ -16,7 +16,7 @@ function Pool() {
 	return (
 		<View style={style.container}>
 			<StatusBarBackground style={style.statusBarColor}/>
-			<MeTabs />
+			<PoolTabs />
 		</View>
 	);
 }

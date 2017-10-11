@@ -1,7 +1,7 @@
 import feedNav from './feedNav';
-import meNav from './meNav';
+import poolNav from './poolNav';
 
 export default {
 	feedNav,
-	meNav,
+	poolNav,
 };

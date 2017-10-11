@@ -13,7 +13,7 @@ const StackNavigation = ({ dispatch, nav }) => (
 );
 
 const mapStateToProps = state => ({
-	nav: state.meNav,
+	nav: state.poolNav,
 });
 
 const mapDispatchToProps = dispatch => ({

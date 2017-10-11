@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { navigate } from '../../store/navs/actions';
+import { poolNavNavigate } from '../../store/navs/actions';
 import { fetchWishes } from '../../store/wishes/actions';
 import WishList from './wishList';
 
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	goToScreen: (routeName, params) => dispatch(navigate(routeName, params)),
+	goToScreen: (routeName, params) => dispatch(poolNavNavigate(routeName, params)),
 	fetchWishes: () => dispatch(fetchWishes()),
 });
 
