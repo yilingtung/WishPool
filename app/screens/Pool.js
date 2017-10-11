@@ -7,9 +7,6 @@ const style = {
 	container: {
 		flex: 1,
 	},
-	statusBarColor: {
-		backgroundColor: '#AFBE31',
-	}
 };
 
 function Pool() {

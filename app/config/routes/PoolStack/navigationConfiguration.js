@@ -22,8 +22,10 @@ export default StackNavigator({
 				onPress={() => navigation.dispatch(poolNavBackto())}
 				title="BACK"
 			/>,
-			headerStyle: style.header,
+			headerStyle: style.headerTransparent,
 			headerTitleStyle: style.headerTitle,
 		}),
 	},
+}, {
+	initialRouteName: 'Pool',
 });

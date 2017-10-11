@@ -12,7 +12,11 @@ const style = {
 	},
 	wishImg: {
 		flex: 1,
-		height: 200,
+		height: 300,
+	},
+	wishImgMask: {
+		flex: 1,
+		backgroundColor: 'rgba(34, 64, 89, 0.3)',
 	},
 	userImg: {
 		width: 48,
@@ -25,7 +29,9 @@ const WishDetail = props => {
 	return (
 		<ScrollView style={style.container}>
 			<View>
-				<Image style={style.wishImg} source={{ uri: wish.img_url }} />
+				<Image style={style.wishImg} source={{ uri: wish.img_url }}>
+					<View style={style.wishImgMask} />
+				</Image>
 				<Image style={style.userImg} source={{ uri: wish.user.pic_url }} />
 				<Text>{wish.user.name}</Text>
 				<Text>{wish.text}</Text>

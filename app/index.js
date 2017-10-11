@@ -12,6 +12,7 @@ const store = configureStore();
 const style = {
 	container: {
 		flex: 1,
+		backgroundColor: '#FFF',
 	},
 };
 
@@ -19,9 +20,6 @@ function App() {
 	return (
 		<Provider store={store}>
 			<View style={style.container}>
-				<StatusBar
-					barStyle="light-content"
-				/>
 				<MainTabs />
 			</View>
 		</Provider>

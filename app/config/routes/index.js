@@ -54,6 +54,7 @@ export const PoolTabs = TabNavigator({
 	},
 }, {
 	...TabNavigator.Presets.AndroidTopTabs,
+	initialRouteName: 'Recent',
 	tabBarOptions: {
 		showIcon: false,
 		labelStyle: {
@@ -61,16 +62,16 @@ export const PoolTabs = TabNavigator({
 			fontWeight: 'bold',
 		},
 		indicatorStyle: {
-			borderBottomColor: '#6c751d',
+			borderBottomColor: '#7ac6d6',
 			borderBottomWidth: 5,
 		},
 		tabStyle: {
 			alignItems: 'center',
 		},
-		activeTintColor: '#FFF',
-		inactiveTintColor: '#6c751d',
+		activeTintColor: 'rgb(52, 73, 94)',
+		inactiveTintColor: 'rgba(52, 73, 94, 0.7)',
 		style: {
-			backgroundColor: '#AFBE31',
+			backgroundColor: '#FFF',
 			borderTopColor: 'rgba(189, 195, 199, 0.3)',
 		}
 	}
