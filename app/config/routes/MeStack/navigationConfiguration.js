@@ -1,18 +1,18 @@
 import React from 'react';
 import { Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Me from '../../../screens/Me';
+import Pool from '../../../screens/Pool';
 import UserDetail from '../../../screens/UserDetail';
 import { meNavBackto } from '../../../store/navs/actions';
 import style from '../style';
 
 export default StackNavigator({
+	// can't change to Pool !!! Don't know why .
 	Me: {
-		screen: Me,
+		screen: Pool,
+		headerMode: 'none',
 		navigationOptions: {
-			title: 'Me',
-			headerStyle: style.header,
-			headerTitleStyle: style.headerTitle,
+			header: null,
 		},
 	},
 	UserDetail: {

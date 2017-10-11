@@ -11,7 +11,7 @@ const style = {
 	},
 };
 
-export const Tabs = TabNavigator({
+export const MainTabs = TabNavigator({
 	Feed: {
 		screen: FeedStack,
 		navigationOptions: {
@@ -19,10 +19,10 @@ export const Tabs = TabNavigator({
 			tabBarIcon: ({ tintColor }) => <View style={[style.icon, { backgroundColor: tintColor }]} />,
 		},
 	},
-	Me: {
+	Pool: {
 		screen: MeStack,
 		navigationOptions: {
-			tabBarLabel: 'Me',
+			tabBarLabel: 'Pool',
 			tabBarIcon: ({ tintColor }) => <View style={[style.icon, { backgroundColor: tintColor }]} />,
 		},
 	},

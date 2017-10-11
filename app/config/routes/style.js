@@ -1,10 +1,10 @@
 export default {
 	header: {
-		backgroundColor: '#FFF',
+		backgroundColor: '#AFBE31',
 		borderBottomWidth: 0,
 	},
 	headerTitle: {
-		color: '#34495E',
+		color: '#FFF',
 		fontWeight: 'bold',
 	},
 };
