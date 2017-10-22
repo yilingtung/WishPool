@@ -11,6 +11,7 @@ export default {
 		left: 0,
 		right: 0,
 		borderBottomWidth: 0,
+		paddingHorizontal: 2,
 	},
 	headerTitle: {
 		color: '#FFF',

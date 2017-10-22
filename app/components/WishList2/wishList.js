@@ -40,9 +40,13 @@ class WishList extends Component {
 						onPress={() => goToScreen('WishDetail', { title: wish.text, wish })}
 					>
 						<Image style={style.wishImg} source={{ uri: wish.img_url }} />
-						<View style={style.user}>
+						<Text style={style.wishText}>{wish.text}</Text>
+						<View style={style.row}>
 							<Image style={style.userImg} source={{ uri: wish.user.pic_url }} />
-							<Text style={style.userName}>{ wish.user.name }</Text>
+							<Text style={style.possibility}>
+								{wish.possibility}
+								<Text style={style.possibility1}> %</Text>
+							</Text>
 						</View>
 					</TouchableOpacity>
 				)}
