@@ -35,8 +35,8 @@ export const MainTabs = TabNavigator({
 		style: {
 			backgroundColor: '#FFF',
 			borderTopColor: 'rgba(189, 195, 199, 0.3)',
-		}
-	}
+		},
+	},
 });
 
 export const PoolTabs = TabNavigator({
@@ -73,6 +73,6 @@ export const PoolTabs = TabNavigator({
 		style: {
 			backgroundColor: '#FFF',
 			borderTopColor: 'rgba(189, 195, 199, 0.3)',
-		}
-	}
+		},
+	},
 });

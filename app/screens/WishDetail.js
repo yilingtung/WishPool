@@ -16,12 +16,12 @@ const style = {
 	},
 	wishImgMask: {
 		flex: 1,
-		backgroundColor: 'rgba(34, 64, 89, 0.3)',
+		backgroundColor: 'rgba(34, 64, 89, 0.2)',
 	},
 	userImg: {
 		width: 48,
 		height: 48,
-	}
+	},
 };
 
 const WishDetail = props => {

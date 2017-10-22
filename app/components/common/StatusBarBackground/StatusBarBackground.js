@@ -4,14 +4,12 @@ import { View, Platform } from 'react-native';
 const style = {
 	container: {
 		height: (Platform.OS === 'ios') ? 20 : 0,
-   		backgroundColor: 'white',
+		backgroundColor: 'white',
 	},
 };
 
-const StatusBarBackground = props => {
-	return (
-		<View style={[style.container, props.style || {}]} />
-	);
-};
+const StatusBarBackground = props => (
+	<View style={[style.container, props.style || {}]} />
+);
 
 export default StatusBarBackground;

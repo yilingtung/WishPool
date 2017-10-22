@@ -4,8 +4,10 @@ const initialState = {
 	list: [],
 	group: {},
 	isFetching: false,
-    error: undefined,
+	error: undefined,
 };
+const group = {};
+let list = [];
 
 export default function (state = initialState, action) {
 	switch (action.type) {
@@ -16,11 +18,9 @@ export default function (state = initialState, action) {
 		case types.FETCH_WISHES_FAILURE:
 			return Object.assign({}, state, {
 				isFetching: false,
-				error: action.error
+				error: action.error,
 			});
 		case types.FETCH_WISHES:
-			const group = {};
-			let list = [];
 			action.wishes.forEach(el => {
 				list = [el.id, ...list];
 				group[el.id] = el;
