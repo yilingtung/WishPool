@@ -33,6 +33,6 @@ export const MainTabs = TabNavigator({
 		style: {
 			backgroundColor: '#FFF',
 			borderTopColor: 'rgba(189, 195, 199, 0.3)',
-		}
-	}
+		},
+	},
 });

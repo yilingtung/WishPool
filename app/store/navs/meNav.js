@@ -8,12 +8,12 @@ export default function (state = null, action) {
 		case types.ME_NAV_NAVIGATE:
 			nextState = MeStack.router.getStateForAction(
 				NavigationActions.reset(
-                 {
-                    index: 0,
-                    actions: [
-                      NavigationActions.navigate({ routeName: action.routeName, params: action.params })
-				  	],
-				}),
+					{
+						index: 0,
+						actions: [
+							NavigationActions.navigate({ routeName: action.routeName, params: action.params }),
+						],
+					}),
 				state,
 			);
 			break;

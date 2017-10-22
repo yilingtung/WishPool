@@ -9,13 +9,13 @@ const style = {
 	},
 	statusBarColor: {
 		backgroundColor: '#AFBE31',
-	}
+	},
 };
 
 function Pool() {
 	return (
 		<View style={style.container}>
-			<StatusBarBackground style={style.statusBarColor}/>
+			<StatusBarBackground style={style.statusBarColor} />
 			<MeTabs />
 		</View>
 	);

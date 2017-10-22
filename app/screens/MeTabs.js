@@ -1,15 +1,6 @@
-import React from 'react';
-import { View } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import Ranking from './Ranking';
 import Recent from './Recent';
-
-const style = {
-	icon: {
-		width: 26,
-		height: 26,
-	},
-};
 
 export default TabNavigator({
 	Recent: {
@@ -44,6 +35,6 @@ export default TabNavigator({
 		style: {
 			backgroundColor: '#AFBE31',
 			borderTopColor: 'rgba(189, 195, 199, 0.3)',
-		}
-	}
+		},
+	},
 });

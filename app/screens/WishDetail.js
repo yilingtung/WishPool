@@ -17,7 +17,7 @@ const style = {
 	userImg: {
 		width: 48,
 		height: 48,
-	}
+	},
 };
 
 const WishDetail = props => {
