@@ -1,104 +1,106 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
-	Text,
-	View,
+	Animated,
 	Image,
 	ScrollView,
-	TouchableOpacity,
+	StyleSheet,
+	Text,
+	View,
 } from 'react-native';
+import Comments from '../components/Comments';
 
-const iconPlus = require('../public/images/icon_plus_color.png');
-const iconMinus = require('../public/images/icon_minus_color.png');
+const defaultSource = require('../public/images/default_image.png');
+
+const HEADER_MAX_HEIGHT = 200;
+const HEADER_MIN_HEIGHT = 60;
+const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const style = {
 	container: {
 		backgroundColor: '#FFF',
 	},
-	wishImg: {
+	fill: {
 		flex: 1,
-		height: 240,
 	},
-	wishImgMask: {
-		flex: 1,
-		backgroundColor: 'rgba(0, 0, 0, 0.2)',
-	},
-	wishHeader: {
-		height: 80,
-		paddingHorizontal: 6,
-		backgroundColor: '#FFF',
-		marginBottom: 20,
-	},
-	wishUser: {
-		flexDirection: 'row',
-	},
-	userImg: {
-		marginTop: -32,
-		marginRight: 6,
-		width: 64,
-		height: 64,
-	},
-	userName: {
-		color: '#34495E',
-		fontWeight: 'bold',
-		fontSize: 18,
-		height: 32,
-		lineHeight: 32,
-		marginBottom: 6,
-	},
-	wishText: {
-		color: '#34495E',
-		paddingLeft: 70,
-	},
-	possibility: {
-		flexDirection: 'row',
-		borderTopColor: 'rgba(189, 195, 199, 0.2)',
-		borderBottomColor: 'rgba(189, 195, 199, 0.2)',
-		borderTopWidth: 1,
-		borderBottomWidth: 1,
-	},
-	posBtn: {
-		flex: 1,
-		justifyContent: 'center',
+	row: {
+		height: 40,
+		margin: 16,
+		backgroundColor: '#D3D3D3',
 		alignItems: 'center',
-		height: 42,
+		justifyContent: 'center',
 	},
-	posText: {
+	header: {
 		position: 'absolute',
-		width: '100%',
-		lineHeight: 42,
-		fontWeight: 'bold',
-		textAlign: 'center',
-		color: '#91959E',
+		top: 0,
+		left: 0,
+		right: 0,
+		backgroundColor: '#000',
+		overflow: 'hidden',
+	},
+	scrollViewContent: {
+		marginTop: HEADER_MAX_HEIGHT,
+	},
+	backgroundImage: {
+		opacity: 0.8,
+		backgroundColor: 'rgba(0, 0, 0, 0.2)',
+		flex: 1,
+		height: HEADER_MAX_HEIGHT,
 	},
 };
 
-const WishDetail = props => {
-	const wish = props.navigation.state.params.wish;
-	return (
-		<ScrollView style={style.container}>
-			<View>
-				<Image style={style.wishImg} source={{ uri: wish.img_url }}>
-					<View style={style.wishImgMask} />
-				</Image>
-				<View style={style.wishHeader}>
-					<View style={style.wishUser}>
-						<Image style={style.userImg} source={{ uri: wish.user.pic_url }} />
-						<Text style={style.userName}>{ wish.user.name }</Text>
-					</View>
-					<Text style={style.wishText}>{ wish.text }</Text>
-				</View>
-				<View style={style.possibility}>
-					<Text style={style.posText}>{ wish.possibility } %</Text>
-					<TouchableOpacity style={style.posBtn}>
-						<Image source={iconMinus} />
-					</TouchableOpacity>
-					<TouchableOpacity style={style.posBtn}>
-						<Image source={iconPlus} />
-					</TouchableOpacity>
-				</View>
-			</View>
-		</ScrollView>
-	);
-};
+export default class WishDetail extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			scrollY: new Animated.Value(0),
+			wish: props.navigation.state.params.wish,
+		};
+	}
 
-export default WishDetail;
+	render() {
+		const headerTranslate = this.state.scrollY.interpolate({
+			inputRange: [0, HEADER_SCROLL_DISTANCE],
+			outputRange: [0, -HEADER_SCROLL_DISTANCE],
+			extrapolate: 'clamp',
+		});
+		const imageTranslate = this.state.scrollY.interpolate({
+			inputRange: [0, HEADER_SCROLL_DISTANCE],
+			outputRange: [0, 100],
+			extrapolate: 'clamp',
+		});
+		return (
+			<View style={[style.container, style.fill]}>
+				<Animated.ScrollView
+					style={style.fill}
+					scrollEventThrottle={1}
+					onScroll={Animated.event(
+						[{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
+						{ useNativeDriver: true },
+					)}
+				>
+					<Comments
+						msgs={this.props.navigation.state.params.wish.msgs}
+						headerMaxHeight={HEADER_MAX_HEIGHT}
+					/>
+				</Animated.ScrollView>
+				<Animated.View
+					style={[
+						style.header,
+						{ transform: [{ translateY: headerTranslate }] },
+					]}
+				>
+					<Animated.Image
+						style={[
+							style.backgroundImage,
+							{
+								transform: [{ translateY: imageTranslate }],
+							},
+						]}
+						defaultSource={defaultSource}
+						source={{ uri: this.state.wish.img_url }}
+					/>
+				</Animated.View>
+			</View>
+		);
+	}
+}
