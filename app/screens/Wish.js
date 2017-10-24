@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {
 	View,
 	ScrollView,
+	Text,
 } from 'react-native';
-import WishList from '../components/WishList';
 
 const style = {
 	container: {
@@ -11,7 +11,7 @@ const style = {
 	},
 };
 
-class Feed extends Component {
+class Wish extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -20,11 +20,11 @@ class Feed extends Component {
 		return (
 			<ScrollView style={style.container}>
 				<View>
-					<WishList />
+					<Text>Wish</Text>
 				</View>
 			</ScrollView>
 		);
 	}
 }
 
-export default Feed;
+export default Wish;

@@ -1,7 +1,9 @@
-import feedNav from './feedNav';
 import poolNav from './poolNav';
+import wishNav from './wishNav';
+import homeNav from './homeNav';
 
 export default {
-	feedNav,
 	poolNav,
+	wishNav,
+	homeNav,
 };

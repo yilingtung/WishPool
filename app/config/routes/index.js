@@ -3,8 +3,9 @@ import {
 	Image,
 } from 'react-native';
 import { TabNavigator } from 'react-navigation';
-import FeedStack from './FeedStack/StackNavigation';
 import PoolStack from './PoolStack/StackNavigation';
+import WishStack from './WishStack/StackNavigation';
+import HomeStack from './HomeStack/StackNavigation';
 import Ranking from '../../screens/Ranking';
 import Recent from '../../screens/Recent';
 
@@ -41,10 +42,28 @@ export const MainTabs = TabNavigator({
 			),
 		},
 	},
-	Feed: {
-		screen: FeedStack,
+	Wish: {
+		screen: WishStack,
 		navigationOptions: {
-			tabBarLabel: 'Feed',
+			tabBarLabel: 'Wish',
+			tabBarIcon: ({ focused }) => (
+				focused ?
+					<Image
+						style={style.icon}
+						source={iconWishActive}
+					/>
+					:
+					<Image
+						style={style.icon}
+						source={iconWish}
+					/>
+			),
+		},
+	},
+	Home: {
+		screen: HomeStack,
+		navigationOptions: {
+			tabBarLabel: 'Home',
 			tabBarIcon: ({ focused }) => (
 				focused ?
 					<Image

@@ -13,7 +13,7 @@ const StackNavigation = ({ dispatch, nav }) => (
 );
 
 const mapStateToProps = state => ({
-	nav: state.feedNav,
+	nav: state.homeNav,
 });
 
 const mapDispatchToProps = dispatch => ({
