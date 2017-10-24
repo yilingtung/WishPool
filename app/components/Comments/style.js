@@ -29,4 +29,7 @@ export default {
 		marginBottom: 10,
 		color: '#939393',
 	},
+	textCenter: {
+		textAlign: 'center',
+	},
 };
