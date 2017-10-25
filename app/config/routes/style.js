@@ -1,7 +1,8 @@
 export default {
 	header: {
 		backgroundColor: '#FFF',
-		borderBottomWidth: 0,
+		borderBottomWidth: 1,
+		borderBottomColor: 'rgba(189, 195, 199, 0.3)',
 	},
 	headerTransparent: {
 		position: 'absolute',
@@ -14,7 +15,7 @@ export default {
 		paddingHorizontal: 2,
 	},
 	headerTitle: {
-		color: '#FFF',
+		color: '#34495E',
 		fontWeight: 'bold',
 	},
 };
